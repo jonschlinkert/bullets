@@ -1,0 +1,48 @@
+{
+  "name": "bullets",
+  "description": "Generate a plain-text or markdown formatted list, with proper indentation, bullets, numbers, letters, roman numerals or custom characters.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/bullets",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": "jonschlinkert/bullets",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/bullets/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "expand-range": "^1.8.1",
+    "list-item": "^0.1.0",
+    "pad-left": "^1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "bullet",
+    "format",
+    "item",
+    "list",
+    "list-item",
+    "markdown",
+    "numbered",
+    "numerals",
+    "ordered",
+    "roman",
+    "test",
+    "unordered"
+  ]
+}
