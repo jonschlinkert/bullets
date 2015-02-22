@@ -1,7 +1,7 @@
 {
   "name": "bullets",
-  "description": "Generate a plain-text or markdown formatted list, with proper indentation, bullets, numbers, letters, roman numerals or custom characters.",
-  "version": "0.1.0",
+  "description": "Generate a plain-text and markdown formatted lists or tables of contents, with proper indentation, bullets, numbers, letters, roman numerals or custom characters.",
+  "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/bullets",
   "author": {
     "name": "Jon Schlinkert",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "mocha": "*",
+    "romanize": "^0.1.0",
     "should": "*"
   },
   "keywords": [
