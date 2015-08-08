@@ -14,7 +14,7 @@ require('should');
 describe('bullets', function () {
   it('should create a bulleted list:', function () {
     var actual = bullets([{text: 'Foo', lvl: '2'}, {text: 'Bar', lvl: 4}, {text: 'Baz', lvl: 2}]);
-    actual.should.equal('    + Foo\n        - Bar\n    + Baz\n');
+    actual.should.equal('    + Foo\n        * Bar\n    + Baz\n');
   });
 
   it('should take a custom function to modify bullets:', function () {
@@ -22,7 +22,7 @@ describe('bullets', function () {
     var actual = bullets(arr, function (ch) {
       return ch + ch;
     });
-    actual.should.equal('    ++ Foo\n        -- Bar\n    ++ Baz\n');
+    actual.should.equal('    ++ Foo\n        ** Bar\n    ++ Baz\n');
   });
 
   it('should generate bullets when range is passed on `chars`:', function () {
