@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "expand-range": "^1.8.1",
-    "list-item": "^1.0.1",
-    "pad-left": "^1.0.1"
+    "list-item": "^1.1.1",
+    "pad-left": "^2.0.0"
   },
   "devDependencies": {
     "mocha": "*",
@@ -52,6 +52,10 @@
     },
     "plugins": [
       "gulp-format-md"
-    ]
+    ],
+    "layout": "default",
+    "option": {
+      "toc": false
+    }
   }
 }
