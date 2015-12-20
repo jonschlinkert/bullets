@@ -43,10 +43,10 @@ module.exports = bullets;
  * // '  * This is sub-item C'
  * ```
  *
- * @name list
+ * @name bullets
  * @param {Array} `list` Array of item objects with `text` and `lvl` properties
- *   @property {String} `text` [list] The text for the list item.
- *   @property {Number} `lvl` [list] The level of the list item to be used for indenting the list.
+ * @param {String} `text` [list] The text for the list item.
+ * @param {Number} `lvl` [list] The level of the list item to be used for indenting the list.
  * @param {Object} `opts` Options to pass to [list-item].
  * @param {Function} `fn` pass a function [expand-range] to modify the bullet for an item as it's generated.
  * @api public
@@ -61,18 +61,12 @@ function bullets(list, opts, fn) {
   var li = listitem(opts, fn);
   var res = '';
 
-  var sublvl = {};
-
   while (len--) {
     var item = list[i++];
     var lvl = item.lvl;
-
-    sublvl[lvl] = sublvl[lvl] || 0;
-    sublvl[lvl]++;
-
     var str = item.text;
 
-    res += li(lvl, str, sublvl);
+    res += li(lvl, str);
     res += '\n';
   }
   return res;
@@ -90,7 +84,6 @@ bullets.flat = function (list, opts, fn) {
 
   while (len--) {
     var item = list[i++];
-
     res += li(lvl, item);
     res += '\n';
   }
