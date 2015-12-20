@@ -47,15 +47,17 @@ I. Item a...
 
 ## API
 
-### [list](index.js#L55)
+### [bullets](index.js#L55)
 
-Pass an array of list-item objects to generate a formatted list or table of contents. Uses [list-item](https://github.com/jonschlinkert/list-item)for generating the actual items.
+Pass an array of list-item objects to generate a formatted list or table of contents. Uses [list-item] for generating the actual items.
 
 **Params**
 
 * `list` **{Array}**: Array of item objects with `text` and `lvl` properties
-* `opts` **{Object}**: Options to pass to [list-item](https://github.com/jonschlinkert/list-item).
-* `fn` **{Function}**: pass a function [expand-range](https://github.com/jonschlinkert/expand-range)to modify the bullet for an item as it's generated.
+* `text` **{String}**: [list] The text for the list item.
+* `lvl` **{Number}**: [list] The level of the list item to be used for indenting the list.
+* `opts` **{Object}**: Options to pass to [list-item].
+* `fn` **{Function}**: pass a function [expand-range] to modify the bullet for an item as it's generated.
 
 **Example**
 
@@ -79,17 +81,17 @@ bullets([{text: 'This is a list item', lvl: 0}]);
 // '  * This is sub-item C'
 ```
 
-## Run tests
+## Running tests
 
 Install dev dependencies:
 
-```bash
-npm i -d && npm test
+```sh
+$ npm i -d && npm test
 ```
 
 ## Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/jonschlinkert/bullets/issues)
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/jonschlinkert/bullets/issues/new).
 
 ## Author
 
