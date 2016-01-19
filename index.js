@@ -7,8 +7,6 @@
 
 'use strict';
 
-var pad = require('pad-left');
-var expand = require('expand-range');
 var listitem = require('list-item');
 
 /**
@@ -19,9 +17,11 @@ module.exports = bullets;
 
 /**
  * Pass an array of list-item objects to generate a formatted list
- * or table of contents. Uses [list-item] for generating the actual
+ * or table of contents. Uses [list-item][] for generating the actual
  * items.
  *
+ * Note that `lvl` or `level` may be passed as the property name in the
+ * following examples.
  *
  * ```js
  * var list = [
@@ -45,10 +45,10 @@ module.exports = bullets;
  *
  * @name bullets
  * @param {Array} `list` Array of item objects with `text` and `lvl` properties
- * @param {String} `text` [list] The text for the list item.
- * @param {Number} `lvl` [list] The level of the list item to be used for indenting the list.
- * @param {Object} `opts` Options to pass to [list-item].
- * @param {Function} `fn` pass a function [expand-range] to modify the bullet for an item as it's generated.
+ * @param {String} `list.text` The text for the list item.
+ * @param {Number} `list.lvl` The level of the list item to be used for indenting the list.
+ * @param {Object} `opts` Options to pass to [list-item][].
+ * @param {Function} `fn` pass a function to modify the bullet for an item as it's generated.
  * @api public
  */
 
@@ -73,7 +73,7 @@ function bullets(list, opts, fn) {
   return res;
 };
 
-bullets.flat = function (list, opts, fn) {
+bullets.flat = function(list, opts, fn) {
   if (typeof opts === 'function') {
     fn = opts;
     opts = {};
