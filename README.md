@@ -47,7 +47,7 @@ I. Item a...
 
 ## API
 
-### [bullets](index.js#L55)
+### [bullets](index.js#L56)
 
 Pass an array of list-item objects to generate a formatted list or table of contents. Uses [list-item](https://github.com/jonschlinkert/list-item) for generating the actual items.
 
