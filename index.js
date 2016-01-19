@@ -7,6 +7,7 @@
 
 'use strict';
 
+var isNumber = require('is-number');
 var listitem = require('list-item');
 
 /**
@@ -64,7 +65,7 @@ function bullets(list, opts, fn) {
 
   while (len--) {
     var item = list[i++];
-    var lvl = item.level || item.lvl;
+    var lvl = getLevel(item);
     var str = item.text || '';
 
     res += li(lvl, str);
@@ -80,7 +81,7 @@ bullets.flat = function(list, opts, fn) {
   }
 
   var len = list.length, i = 0;
-  var lvl = opts && (opts.level || opts.lvl) || 0;
+  var lvl = getLevel(opts);
   var li = listitem(opts, fn);
   var res = '';
 
@@ -91,3 +92,14 @@ bullets.flat = function(list, opts, fn) {
   }
   return res;
 };
+
+function getLevel(opts) {
+  opts = opts || {};
+  if (isNumber(opts.level)) {
+    return opts.level;
+  }
+  if (isNumber(opts.lvl)) {
+    return opts.lvl;
+  }
+  return 0;
+}
