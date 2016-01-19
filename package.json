@@ -1,7 +1,7 @@
 {
   "name": "bullets",
   "description": "Generate a plain-text and markdown formatted lists or tables of contents, with proper indentation, bullets, numbers, letters, roman numerals or custom characters.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/jonschlinkert/bullets",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
@@ -23,11 +23,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "expand-range": "^1.8.1",
-    "list-item": "^1.1.1",
-    "pad-left": "^2.0.0"
+    "list-item": "^1.1.1"
   },
   "devDependencies": {
+    "gulp-format-md": "^0.1.5",
     "mocha": "*",
     "romanize": "^0.1.0",
     "should": "*"
@@ -48,7 +47,9 @@
   ],
   "verb": {
     "related": {
-      "list": []
+      "list": [
+        "list-item"
+      ]
     },
     "plugins": [
       "gulp-format-md"
@@ -56,6 +57,9 @@
     "layout": "default",
     "option": {
       "toc": false
-    }
+    },
+    "reflinks": [
+      "list-item"
+    ]
   }
 }
