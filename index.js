@@ -54,7 +54,8 @@ module.exports = bullets;
 
 function bullets(list, opts, fn) {
   if (typeof opts === 'function') {
-    fn = opts; opts = {};
+    fn = opts;
+    opts = {};
   }
 
   var len = list.length, i = 0;
@@ -63,8 +64,8 @@ function bullets(list, opts, fn) {
 
   while (len--) {
     var item = list[i++];
-    var lvl = item.lvl;
-    var str = item.text;
+    var lvl = item.level || item.lvl;
+    var str = item.text || '';
 
     res += li(lvl, str);
     res += '\n';
@@ -74,11 +75,12 @@ function bullets(list, opts, fn) {
 
 bullets.flat = function (list, opts, fn) {
   if (typeof opts === 'function') {
-    fn = opts; opts = {};
+    fn = opts;
+    opts = {};
   }
 
   var len = list.length, i = 0;
-  var lvl = opts && opts.lvl || 0;
+  var lvl = opts && (opts.level || opts.lvl) || 0;
   var li = listitem(opts, fn);
   var res = '';
 
